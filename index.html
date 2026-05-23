@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Gateway Travel | بوابة الفخامة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0A0E1A;
+            --bg-card: #111827;
+            --gold: #C9A84C;
+            --gold-light: #E8C97A;
+            --text-primary: #F0EAD6;
+            --text-secondary: #8A94A6;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 50px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            color: var(--gold);
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .links-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .link-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--gold);
+            color: var(--text-primary);
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        .link-btn:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+        .link-btn i {
+            font-size: 20px;
+        }
+        .whatsapp { border-color: #25D366; }
+        .whatsapp:hover { background-color: #25D366; border-color: #25D366; }
+        
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">✈</div>
+        <h1>LUXURY GATEWAY</h1>
+        <p>TRAVEL & TOURISM MANAGEMENT</p>
+
+        <div class="links-container">
+            <!-- زر حفظ جهة الاتصال -->
+            <a href="#" class="link-btn" onclick="downloadVCard()" style="background-color: var(--gold); color: var(--bg-dark);">
+                <i class="fas fa-user-plus"></i> حفظ جهة الاتصال
+            </a>
+            <!-- رابط الواتساب - استبدل الرقم برقم شركتك -->
+            <a href="https://wa.me/9647722222661" class="link-btn whatsapp">
+                <i class="fab fa-whatsapp"></i> مراسلة عبر الواتساب
+            </a>
+            <a href="https://www.instagram.com/luxury.gateway_t/" class="link-btn">
+                <i class="fab fa-instagram"></i> تابعنا على انستغرام
+            </a>
+            <a href="https://www.facebook.com/p/Luxury-Gateway-%D8%A8%D9%88%D8%A7%D8%A8%D8%A9-%D8%A7%D9%84%D9%81%D8%AE%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%B3%D9%81%D8%B1-%D9%88-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-61573039378691/" class="link-btn">
+                <i class="fab fa-facebook-f"></i> صفحتنا على فيسبوك
+            </a>
+            <a href="https://share.google/UDLzqD1BHCGOt8aPG" class="link-btn">
+                <i class="fas fa-location-dot"></i> موقع الشركة (Google Maps)
+            </a>
+        </div>
+    </div>
+    <div class="footer">© 2024 Luxury Gateway. All Rights Reserved.</div>
+
+    <script>
+        function downloadVCard() {
+            const vcard = "BEGIN:VCARD\n" +
+                          "VERSION:3.0\n" +
+                          "FN:Luxury Gateway Travel\n" +
+                          "ORG:Luxury Gateway Travel & Tourism\n" +
+                          "TEL;TYPE=WORK,VOICE:+9647700000000\n" +
+                          "URL:https://luxury-gateway.travel\n" +
+                          "END:VCARD";
+            
+            const blob = new Blob([vcard], { type: "text/vcard" });
+            const url = window.URL.createObjectURL(blob);
+            const newLink = document.createElement("a");
+            newLink.href = url;
+            newLink.setAttribute("download", "Luxury_Gateway.vcf");
+            document.body.appendChild(newLink);
+            newLink.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
